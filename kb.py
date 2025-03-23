@@ -13,13 +13,10 @@ def main():
         
         pilihan = input("Masukkan pilihan (1-4): ")
         
-        # Struktur kontrol if-elif-else
         if pilihan == '1':
-            # Generate ID acak menggunakan library random
             task_id = random.randint(1000, 9999)
             nama = input("Nama tugas: ")
             
-            # Validasi tanggal menggunakan library datetime
             while True:
                 try:
                     deadline = input("Deadline (YYYY-MM-DD): ")
@@ -28,7 +25,6 @@ def main():
                 except ValueError:
                     print("Format tanggal salah! Gunakan format YYYY-MM-DD")
             
-            # Struktur data dictionary untuk menyimpan informasi tugas
             tugas = {
                 'id': task_id,
                 'nama': nama,
@@ -39,7 +35,6 @@ def main():
             print(f"Tugas berhasil ditambahkan dengan ID: {task_id}")
         
         elif pilihan == '2':
-            # Struktur kontrol for loop
             print("\nDaftar Tugas:")
             for idx, tugas in enumerate(tasks, 1):
                 print(f"{idx}. ID: {tugas['id']}")
@@ -50,7 +45,6 @@ def main():
         
         elif pilihan == '3':
             task_id = int(input("Masukkan ID tugas yang selesai: "))
-            # Struktur kontrol for loop dengan break
             for tugas in tasks:
                 if tugas['id'] == task_id:
                     tugas['status'] = 'Selesai'
